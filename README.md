@@ -1,20 +1,24 @@
 # Multilingual Translate for React.js
 Add multilingual support to your react app with 4 easy steps. Built with React hooks and love.
 
+### Example
+[View](http://ashishvb.github.io/example-multilingual-translate-react)  [Code](https://github.com/ashishvb/example-multilingual-translate-react)
+
+
 ### Installation
 npm i multilingual-translate --save
 
 ### Usage
 1. Create a separate JSON file for every required language and store them inside public/translations in your react project.  
 for eg 
-        - english translations in public/translations/en.json
-        - hindi translations in public/translations/hin.json   
+- english translations in public/translations/en.json
+- hindi translations in public/translations/hin.json   
 
 2. Wrap the root component with the MultiLingualTranslationWrapper component. Index.js or App.js is the best place for this to share the translations all over the app.
 ```
     import MultiLingualTranslationWrapper from 'multilingual-translate';
     ReactDOM.render(
-        <MultiLingualTranslationWrapper defLang="en">
+        <MultiLingualTranslationWrapper defLang="en" folderURL={process.env.PUBLIC_URL + '/translations'}>
           <App />
         </MultiLingualTranslationWrapper>
       document.getElementById('root')
