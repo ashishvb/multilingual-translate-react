@@ -1,0 +1,38 @@
+{
+  "name": "multilingual-translate",
+  "version": "1.0.1",
+  "description": "Add multilingual support to your react app with 4 easy steps. Built with React hooks and love.",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ashishvb/multilingual-translate-react.git"
+  },
+  "keywords": [
+    "React",
+    "Translation",
+    "Multilingual"
+  ],
+  "author": "ashishvb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashishvb/multilingual-translate-react/issues"
+  },
+  "homepage": "https://github.com/ashishvb/multilingual-translate-react#readme"
+}
