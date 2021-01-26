@@ -1,6 +1,6 @@
 {
   "name": "multilingual-translate",
-  "version": "1.0.1",
+  "version": "1.0.8",
   "description": "Add multilingual support to your react app with 4 easy steps. Built with React hooks and love.",
   "main": "./build/index.js",
   "scripts": {

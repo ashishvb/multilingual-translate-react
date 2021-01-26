@@ -3,12 +3,13 @@ import  React,{ createContext, useState, useEffect, useContext } from 'react'
 const TranslationCtx = createContext();
 
 // Wrapper component to allow translation access all over the app
-const MultiLingualTranslationWrapper = ({children, defLang}) => {
+const MultiLingualTranslationWrapper = ({children, defLang, folderURL}) => {
     
     // State
-    let [translation, setTranslations] = useState([])
+    let [translation, setTranslations] = useState({})
     let [isTranslationLoading, setIsTranslationLoading] = useState(true);
     let [translationLanguage, setTranslationLanguage] = useState(localStorage.getItem('defLang') || defLang || 'en');
+    let translationFolderURL =  folderURL || 'translations/'
 
     // Fetch translation of the default or user selected language
     useEffect(() => {
@@ -28,7 +29,7 @@ const MultiLingualTranslationWrapper = ({children, defLang}) => {
 
         try {
             
-            let response = await fetch(`/translations/${language}.json`);
+            let response = await fetch(`${translationFolderURL}/${language}.json`);
             let responseJSON = await response.json();
         
             setTranslations(responseJSON);
@@ -68,7 +69,7 @@ const useTranslate = () => {
      */
     const Translate = (key, defaultValue = '') => {
 
-        if(translationCtx.isTranslationLoading) return '';
+        if(Object.keys(translationCtx.translation).length === 0) return '';
 
         // Getting the value of the key from the nested translation json object
         let translation = translationCtx.translation;
